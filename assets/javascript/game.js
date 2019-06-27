@@ -20,6 +20,7 @@ crystal4 = Math.floor(Math.random()*12+1);
 
 $(document).ready(function() {
     
+    // this function does not work inside onclick functions i dont know why
      function main() {
     if(totalScore==mainNumber){
         win++;
