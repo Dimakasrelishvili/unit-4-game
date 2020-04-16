@@ -1,77 +1,113 @@
+$(document).ready(function() {
 
+ var totalScore =0;
 
+var wins =0; 
+var losses =0;
+ function reset(){
 
-
-var mainNumber =0;     
-var crystal1 =0;
-var crystal2 =0;
-var crystal3 =0;
-var crystal4 =0;
-var totalScore =0;
-var win =0; 
-var loses =0;
-
-
-mainNumber = Math.floor(Math.random() * 101+19);
+mainNumber = Math.floor(Math.random() * 100+20);
 crystal1 = Math.floor(Math.random()*12+1);
 crystal2 = Math.floor(Math.random()*12+1);
 crystal3 = Math.floor(Math.random()*12+1);
 crystal4 = Math.floor(Math.random()*12+1);
+$("#mainNumber").text("target number " +  mainNumber) 
 
-$(document).ready(function() {
-    
+totalScore=0
+$("#totalScore").text("your total score" + "  " + totalScore) 
+
+ }
+ reset()
+
+
+
     // this function does not work inside onclick functions i dont know why
-     function main() {
-    if(totalScore==mainNumber){
-        win++;
-    };
-    if(totalScore>mainNumber){
-        loses++;
-         mainNumber =0;     
-         crystal1 =0;
-         crystal2 =0;
-         crystal3 =0;
-         crystal4 =0;
-         totalScore =0;
-         console.log(totalScore);
-         console.log(win);
-         console.log(losses);
+    function win() {
+        wins++;
+        $("#wins").text("your wins :" + wins) 
+        $("#totalScore").text("your total score" + "  " + totalScore) 
+        alert("good job winner !!!")
+        reset()
+
+    }
+    function lose(){
+        losses++;
+        $("#losses").text("your losses :" + losses)
+        $("#totalScore").text("your total score" + "  " + totalScore) 
+        alert(" you can try again ! ")
+        reset()
+    }
+ 
+
+    
+    
+    $("#crystal1").on("click", function() {
        
+        totalScore = totalScore + crystal1  
+        
+        $("#totalScore").text("your total score" + "  " + totalScore) 
        
-    };};
-$("#crystal1").on("click", function() {
-        main()
-        totalScore=totalScore+crystal1;
+            
+        if(totalScore == mainNumber){
+            
+            win();
+        }
+        else if (totalScore > mainNumber){
+            lose();
+        }  
     });
     
     $("#crystal2").on("click", function() {
-        totalScore=totalScore+crystal2;
-        main()
+       
+        totalScore = totalScore + crystal2  
+        
+        $("#totalScore").text("your total score" + "  " + totalScore) 
+       
+            
+        if(totalScore == mainNumber){
+            
+            win();
+        }
+        else if (totalScore > mainNumber){
+            lose();
+        }  
     });
+
     
     $("#crystal3").on("click", function() {
-        totalScore=totalScore+crystal3;
-        main()
+       
+        totalScore = totalScore + crystal3  
         
+        $("#totalScore").text("your total score" + "  " + totalScore) 
+       
+            
+        if(totalScore == mainNumber){
+            
+            win();
+        }
+        else if (totalScore > mainNumber){
+            lose();
+        }  
     });
+    
+    
     $("#crystal4").on("click", function() {
-        totalScore=totalScore+crystal4;
-        main()
+       
+        totalScore = totalScore + crystal4  
+        
+        $("#totalScore").text("your total score" + "  " + totalScore) 
+       
+            
+        if(totalScore == mainNumber){
+            
+            win();
+        }
+        else if (totalScore > mainNumber){
+            lose();
+        }  
     });
-    
-    
-}); 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
+})

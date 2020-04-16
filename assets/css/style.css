@@ -1,0 +1,14 @@
+#mainNumber {
+    padding: 15px;
+    font-size: xx-large;
+}
+.crystal {
+    
+    background-image: url("../images/14167526-playing-card-back-side-60x90-mm-Stock-Vector-cards.jpg");
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    
+}
